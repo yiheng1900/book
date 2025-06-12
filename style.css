@@ -1,0 +1,56 @@
+/* 全局样式重置 */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* 防止页面滚动 */
+    background-color: #333; /* 深色背景，突出书本 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 主容器，用于垂直和水平居中 */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* 书本容器，由JS库控制具体样式，这里只设置基本阴影 */
+.flip-book {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* 页面基本样式 */
+.page {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* 确保图片不会溢出页面 */
+}
+
+/* 页面中的图片样式 */
+.page img {
+    width: 100%;
+    height: 100%;
+    /* 使用 contain 确保图片完整显示并保持比例 */
+    object-fit: contain; 
+}
+
+/* 右下角提示信息样式 */
+.info {
+    position: fixed;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    z-index: 1000;
+    pointer-events: none; /* 让鼠标事件可以穿透这个元素 */
+}
+.info p {
+    margin: 2px 0;
+}
